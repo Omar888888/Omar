@@ -17,12 +17,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* Evitar scroll horizontal */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         header {
             text-align: center;
             margin-top: 30px;
             padding: 0 15px;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         h1 {
@@ -60,6 +70,8 @@
         .button-container {
             text-align: center;
             flex: 0 0 auto;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .surprise-button {
@@ -79,6 +91,17 @@
             color: #fff;
         }
 
+        /* Efecto de partículas */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
         /* Mensajes sorpresa */
         .sorpresa {
             display: none;
@@ -96,16 +119,12 @@
             font-size: 1.8rem;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
         /* Media Queries */
         @media (max-width: 768px) {
             section.content {
-            text-align: center; /* Asegura que el texto esté centrado */
-            }   
+                text-align: center; /* Asegura que el texto esté centrado */
+            }
+
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
@@ -124,9 +143,12 @@
                 font-size: 1.5rem;
             }
         }
+
     </style>
 </head>
 <body>
+    <div class="particles"></div> <!-- Efecto de partículas -->
+    
     <header>
         <h1>Para mi querida Clarita 💖</h1>
         <p class="subtitle">Una página llena de amor solo para ti, mi vida. 😍</p>
@@ -169,7 +191,7 @@
                     <button class="surprise-button" onclick="mostrarSorpresa('sorpresa6')">❤️</button>
                     <div id="sorpresa6" class="sorpresa"><p>Mi lugar favorito en el mundo es a tu lado. ❤️</p></div>
                 </div>
-            
+
                 <div class="button-container">
                     <button class="surprise-button" onclick="mostrarSorpresa('sorpresa7')">💎</button>
                     <div id="sorpresa7" class="sorpresa"><p>Amarte es el tesoro más grande que la vida me ha dado. 💎</p></div>
@@ -194,7 +216,7 @@
     </main>
 
     <footer>
-        <p>Siempre tuyo, con todo mi amor. 💕</p>
+        <p>Siempre tuyo nena mía, te amo con toda mi alma. 💕</p>
     </footer>
 
     <script>
