@@ -27,6 +27,42 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+               /* Cuadro de bienvenida */
+               #welcome-message {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 223, 236, 0.95);
+            color: #5a4d6e;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        #welcome-message p {
+            font-size: 1.3rem;
+            max-width: 80%;
+            margin: 20px auto;
+        }
+
+        #welcome-message button {
+            background-color: #e84a5f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #welcome-message button:hover {
+            background-color: #f7b7a3;
+        }
         header {
             text-align: center;
             margin-top: 20px;
@@ -45,7 +81,7 @@
             font-size: 1.2rem;
             color: #9b4d9f;
             font-style: italic;
-            max-width: 50%; /* Limita el ancho del texto */
+            max-width: 90%; /* Limita el ancho del texto */
             text-align: center; /* Centra el texto */
             word-wrap: break-word; /* Permite que el texto se ajuste automáticamente al contenedor */
             margin: 0 auto; /* Centra el texto horizontalmente */
@@ -167,9 +203,14 @@
     </style>
 </head>
 <body>
+    <!-- Cuadro de Bienvenida -->
+        <div id="welcome-message">
+            <h2>Bienvenida, Clarita 💖</h2>
+            <p>Como bien sabes, hoy 18 de diciembre cumplimos 2 años y 6 meses, y se me ocurrió utilizar mis conocimientos para crear esta página exclusivamente para vos, mi princesita hermosa 😍😘🥰.</p>
+            <button onclick="cerrarBienvenida()">Bueno mi morenito 💞</button>
+        </div>
     <header>
         <h1>Acceso Especial para Clarita 💖</h1>
-        <p class="subtitle">Como bien sabes hoy 18 de diciembre cumplimos 2 años 6 meses y se me ocurrió utilizar mis conocimientos para hacerte esta página exclusivamente para vos mi princesita.</p>
         <p class="subtitle">Para entrar debes responder correctamente, cielo 💞.</p>
     </header>
 
@@ -207,6 +248,16 @@
             <p>Te equivocaste corazón 🥺, igual te sigo amando 😘😍. Intentá de nuevo.</p>
         </div>
     <script>
+        // Mostrar mensaje al cargar la página
+            window.onload = function() {
+            document.getElementById("welcome-message").style.display = "flex";
+        };
+
+        // Función para cerrar el mensaje de bienvenida
+        function cerrarBienvenida() {
+            document.getElementById("welcome-message").style.display = "none";
+        }
+
         function verificarRespuesta() {
             var respuesta1 = document.getElementById("question1").value.trim().toLowerCase();
             var respuesta2 = document.getElementById("question2").value.trim().toLowerCase();
