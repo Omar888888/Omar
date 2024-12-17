@@ -47,14 +47,19 @@
             padding: 0 10px;
         }
 
-        /* Botones */
+        /* Contenedor de botones */
         .buttons-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
             justify-content: center;
+            gap: 15px;
             margin-top: 20px;
             padding: 0 10px;
+        }
+
+        .button-container {
+            text-align: center;
+            flex: 0 0 auto;
         }
 
         .surprise-button {
@@ -74,14 +79,13 @@
             color: #fff;
         }
 
+        /* Mensajes sorpresa */
         .sorpresa {
             display: none;
-            text-align: center;
+            margin-top: 10px;
             font-size: 1.5rem;
             color: #7b5e6a;
-            margin-top: 20px;
             animation: fadeIn 1s ease-in-out;
-            padding: 0 15px;
         }
 
         .sorpresa p {
@@ -97,14 +101,15 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Media Queries para pantallas más pequeñas */
+        /* Media Queries */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
             }
 
-            p.subtitle {
-                font-size: 1.2rem;
+            .button-container {
+                width: 100%;
             }
 
             .surprise-button {
@@ -112,36 +117,8 @@
                 padding: 10px;
             }
 
-            .buttons-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-
             .sorpresa p {
                 font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            p.subtitle {
-                font-size: 1rem;
-            }
-
-            .surprise-button {
-                font-size: 1.3rem;
-                padding: 8px;
-            }
-
-            .sorpresa p {
-                font-size: 1.3rem;
-            }
-
-            footer {
-                font-size: 1rem;
             }
         }
     </style>
@@ -158,31 +135,58 @@
                 Mi amor, cada palabra aquí escrita refleja lo especial que eres para mí.
             </p>
 
-            <!-- Botones sorpresa -->
+            <!-- Botones y Mensajes -->
             <div class="buttons-container">
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa1')">💌</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa2')">💐</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa3')">🌹</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa4')">🎶</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa5')">🌟</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa6')">❤️</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa7')">💎</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa8')">🌻</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa9')">🕊️</button>
-                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa10')">💫</button>
-            </div>
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa1')">💌</button>
+                    <div id="sorpresa1" class="sorpresa"><p>Te amo más que ayer, pero menos que mañana. 💖</p></div>
+                </div>
+                
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa2')">💐</button>
+                    <div id="sorpresa2" class="sorpresa"><p>Si fueras un sueño, nunca quisiera despertar. 😘</p></div>
+                </div>
 
-            <!-- Mensajes sorpresa -->
-            <div id="sorpresa1" class="sorpresa"><p>Te amo más que ayer, pero menos que mañana. 💖</p></div>
-            <div id="sorpresa2" class="sorpresa"><p>Si fueras un sueño, nunca quisiera despertar. 😘</p></div>
-            <div id="sorpresa3" class="sorpresa"><p>Cada día contigo es un regalo, mi vida sería incompleta sin ti. 🌙</p></div>
-            <div id="sorpresa4" class="sorpresa"><p>Tu risa es mi canción favorita y tu amor mi inspiración eterna. 🎵</p></div>
-            <div id="sorpresa5" class="sorpresa"><p>Eres mi estrella, la luz que guía mis noches más oscuras. 🌟</p></div>
-            <div id="sorpresa6" class="sorpresa"><p>Mi lugar favorito en el mundo es a tu lado. ❤️</p></div>
-            <div id="sorpresa7" class="sorpresa"><p>Amarte es el tesoro más grande que la vida me ha dado. 💎</p></div>
-            <div id="sorpresa8" class="sorpresa"><p>Como el girasol busca al sol, mi corazón siempre te busca a ti. 🌻</p></div>
-            <div id="sorpresa9" class="sorpresa"><p>Tu amor llena de paz mi alma, como una brisa suave. 🕊️</p></div>
-            <div id="sorpresa10" class="sorpresa"><p>En el cielo de mi corazón, cada estrella lleva tu nombre. 💫</p></div>
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa3')">🌹</button>
+                    <div id="sorpresa3" class="sorpresa"><p>Cada día contigo es un regalo, mi vida sería incompleta sin ti. 🌙</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa4')">🎶</button>
+                    <div id="sorpresa4" class="sorpresa"><p>Tu risa es mi canción favorita y tu amor mi inspiración eterna. 🎵</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa5')">🌟</button>
+                    <div id="sorpresa5" class="sorpresa"><p>Eres mi estrella, la luz que guía mis noches más oscuras. 🌟</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa6')">❤️</button>
+                    <div id="sorpresa6" class="sorpresa"><p>Mi lugar favorito en el mundo es a tu lado. ❤️</p></div>
+                </div>
+            
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa7')">💎</button>
+                    <div id="sorpresa7" class="sorpresa"><p>Amarte es el tesoro más grande que la vida me ha dado. 💎</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa8')">🌻</button>
+                    <div id="sorpresa8" class="sorpresa"><p>Como el girasol busca al sol, mi corazón siempre te busca a ti. 🌻</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa9')">🕊️</button>
+                    <div id="sorpresa9" class="sorpresa"><p>Tu amor llena de paz mi alma, como una brisa suave. 🕊️</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa10')">💫</button>
+                    <div id="sorpresa10" class="sorpresa"><p>En el cielo de mi corazón, cada estrella lleva tu nombre. 💫</p></div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -191,17 +195,10 @@
     </footer>
 
     <script>
-        // Función para mostrar los mensajes de sorpresa
+        // Función para mostrar el mensaje debajo del botón
         function mostrarSorpresa(id) {
-            var sorpresas = document.querySelectorAll('.sorpresa');
-            // Ocultar todas las sorpresas
-            sorpresas.forEach(function(sorpresa) {
-                sorpresa.style.display = 'none';
-            });
-
-            // Mostrar la sorpresa seleccionada
-            var sorpresaSeleccionada = document.getElementById(id);
-            sorpresaSeleccionada.style.display = 'block';
+            var mensaje = document.getElementById(id);
+            mensaje.style.display = mensaje.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
