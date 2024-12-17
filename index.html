@@ -103,6 +103,9 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
+            section.content {
+            text-align: center; /* Asegura que el texto esté centrado */
+            }   
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
@@ -141,7 +144,7 @@
                     <button class="surprise-button" onclick="mostrarSorpresa('sorpresa1')">💌</button>
                     <div id="sorpresa1" class="sorpresa"><p>Te amo más que ayer, pero menos que mañana. 💖</p></div>
                 </div>
-                
+
                 <div class="button-container">
                     <button class="surprise-button" onclick="mostrarSorpresa('sorpresa2')">💐</button>
                     <div id="sorpresa2" class="sorpresa"><p>Si fueras un sueño, nunca quisiera despertar. 😘</p></div>
