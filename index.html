@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Amor para Clarita</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Para Clarita</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-    /* Estilos generales */
+        /* Estilos generales */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fdf6f7;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff6f9;
             color: #5a4d6e;
             margin: 0;
             padding: 0;
@@ -24,14 +25,14 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #e84a5f;
-            font-family: 'Brush Script MT', cursive;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        p.intro {
+        p.subtitle {
             font-size: 1.5rem;
-            margin-top: 20px;
             color: #9b4d9f;
             font-style: italic;
         }
@@ -41,6 +42,7 @@
             text-align: center;
             font-size: 1.2rem;
             color: #e84a5f;
+            font-family: 'Great Vibes', cursive;
         }
 
         .buttons-container {
@@ -57,38 +59,48 @@
             cursor: pointer;
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .surprise-button:hover {
             transform: scale(1.2);
+            background-color: #e84a5f;
+            color: #fff;
         }
 
         .sorpresa {
             display: none;
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #7b5e6a;
             margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .sorpresa p {
             background-color: #ffe6f1;
-            padding: 10px;
+            padding: 15px;
             border-radius: 8px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Para mi querida Clarita 💖</h1>
-        <p>Una página llena de amor solo para vos mi nena 😍.</p>
+        <p class="subtitle">Una página llena de amor solo para ti, mi vida. 😍</p>
     </header>
 
     <main>
         <section class="content">
-            <p class="intro">
-                Mi amor, aquí encontrarás pequeños detalles para ti, porque te amo más de lo que las palabras pueden expresar.
+            <p class="subtitle">
+                Mi amor, cada palabra aquí escrita refleja lo especial que eres para mí.
             </p>
 
             <!-- Botones sorpresa -->
@@ -96,8 +108,11 @@
                 <button class="surprise-button" onclick="mostrarSorpresa('sorpresa1')">💌</button>
                 <button class="surprise-button" onclick="mostrarSorpresa('sorpresa2')">💐</button>
                 <button class="surprise-button" onclick="mostrarSorpresa('sorpresa3')">🌹</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa4')">🎶</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa5')">🌟</button>
             </div>
 
+            <!-- Mensajes sorpresa -->
             <div id="sorpresa1" class="sorpresa">
                 <p>Te amo más que ayer, pero menos que mañana. 💖</p>
             </div>
@@ -109,11 +124,19 @@
             <div id="sorpresa3" class="sorpresa">
                 <p>Cada día contigo es un regalo, mi vida sería incompleta sin ti. 🌙</p>
             </div>
+
+            <div id="sorpresa4" class="sorpresa">
+                <p>Tu risa es mi canción favorita y tu amor mi inspiración eterna. 🎵</p>
+            </div>
+
+            <div id="sorpresa5" class="sorpresa">
+                <p>Eres mi estrella, la luz que guía mis noches más oscuras. 🌟</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Te amo, Clarita. 💕</p>
+        <p>Siempre tuyo, con todo mi amor. 💕</p>
     </footer>
 
     <script>
