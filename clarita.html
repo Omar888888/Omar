@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Clarita</title>
+    <link rel="icon" href="corazon.ico" type="image/x-png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff6f9;
+            color: #5a4d6e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden; /* Evitar scroll horizontal */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            text-align: center;
+            margin-top: 30px;
+            padding: 0 15px;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #e84a5f;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.5rem;
+            color: #9b4d9f;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #e84a5f;
+            font-family: 'Great Vibes', cursive;
+            padding: 0 10px;
+        }
+
+        /* Contenedor de botones */
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        .button-container {
+            text-align: center;
+            flex: 0 0 auto;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .surprise-button {
+            background-color: #f7b7a3;
+            border: none;
+            padding: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .surprise-button:hover {
+            transform: scale(1.2);
+            background-color: #e84a5f;
+            color: #fff;
+        }
+
+        /* Efecto de partículas */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Mensajes sorpresa */
+        .sorpresa {
+            display: none;
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #7b5e6a;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .sorpresa p {
+            background-color: #ffe6f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            section.content {
+                text-align: center; /* Asegura que el texto esté centrado */
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button-container {
+                width: 100%;
+            }
+
+            .surprise-button {
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+
+            .sorpresa p {
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="particles"></div> <!-- Efecto de partículas -->
+    
+    <header>
+        <h1>Para mi querida Clarita 💖</h1>
+        <p class="subtitle">Una página llena de amor solo para ti, mi vida. 😍</p>
+    </header>
+
+    <main>
+        <section class="content">
+            <p class="subtitle">
+                Mi amor, cada palabra aquí escrita refleja lo especial que eres para mí.
+            </p>
+
+            <!-- Botones y Mensajes -->
+            <div class="buttons-container">
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa1')">💌</button>
+                    <div id="sorpresa1" class="sorpresa"><p>Te amo más que ayer, pero menos que mañana. 💖</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa2')">💐</button>
+                    <div id="sorpresa2" class="sorpresa"><p>Si fueras un sueño, nunca quisiera despertar. 😘</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa3')">🌹</button>
+                    <div id="sorpresa3" class="sorpresa"><p>Cada día contigo es un regalo, mi vida sería incompleta sin ti. 🌙</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa4')">🎶</button>
+                    <div id="sorpresa4" class="sorpresa"><p>Tu risa es mi canción favorita y tu amor mi inspiración eterna. 🎵</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa5')">🌟</button>
+                    <div id="sorpresa5" class="sorpresa"><p>Eres mi estrella, la luz que guía mis noches más oscuras. 🌟</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa6')">❤️</button>
+                    <div id="sorpresa6" class="sorpresa"><p>Mi lugar favorito en el mundo es a tu lado. ❤️</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa7')">💎</button>
+                    <div id="sorpresa7" class="sorpresa"><p>Amarte es el tesoro más grande que la vida me ha dado. 💎</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa8')">🌻</button>
+                    <div id="sorpresa8" class="sorpresa"><p>Como el girasol busca al sol, mi corazón siempre te busca a ti. 🌻</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa9')">🕊️</button>
+                    <div id="sorpresa9" class="sorpresa"><p>Tu amor llena de paz mi alma, como una brisa suave. 🕊️</p></div>
+                </div>
+
+                <div class="button-container">
+                    <button class="surprise-button" onclick="mostrarSorpresa('sorpresa10')">💫</button>
+                    <div id="sorpresa10" class="sorpresa"><p>En el cielo de mi corazón, cada estrella lleva tu nombre. 💫</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Siempre tuyo nena mía, te amo con toda mi alma. 💕</p>
+    </footer>
+
+    <script>
+        // Función para mostrar el mensaje debajo del botón
+        function mostrarSorpresa(id) {
+            var mensaje = document.getElementById(id);
+            mensaje.style.display = mensaje.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

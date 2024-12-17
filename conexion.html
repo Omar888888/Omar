@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión Especial</title>
+    <link rel="icon" href="corazon.ico" type="image/x-png">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff6f9;
+            color: #5a4d6e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden; /* Evitar scroll horizontal */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #e84a5f;
+            font-family: 'Great Vibes', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #9b4d9f;
+            font-style: italic;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px; /* Limita el ancho máximo para pantallas grandes */
+        }
+
+        .question {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .input-field {
+            padding: 12px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #e84a5f;
+            outline: none;
+            width: 100%; /* Ajusta el ancho al 100% */
+            box-sizing: border-box;
+        }
+
+        .submit-button {
+            background-color: #e84a5f;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%; /* Ajusta el ancho al 100% */
+            box-sizing: border-box;
+        }
+
+        .submit-button:hover {
+            background-color: #f7b7a3;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #e84a5f;
+            font-family: 'Great Vibes', cursive;
+        }
+        /* Estilo del mensaje de error centrado */
+        .error-message {
+            display: none;
+            background-color: rgba(248, 215, 218, 0.9); /* Fondo con algo de transparencia */
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            padding: 20px;
+            border-radius: 8px;
+            position: fixed; /* Posición fija en la pantalla */
+            top: 50%; /* Centrado vertical */
+            left: 50%; /* Centrado horizontal */
+            transform: translate(-50%, -50%); /* Ajuste para asegurar el centro exacto */
+            text-align: center;
+            font-size: 1.3rem;
+            width: 80%;
+            max-width: 400px;
+            z-index: 1000; /* Asegura que el mensaje se vea encima de otros elementos */
+        }
+
+        .error-message p {
+            margin: 0;
+        }
+
+        .error-message .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: #721c24;
+            cursor: pointer;
+        }
+
+        .error-message .close-btn:hover {
+            color: #f1c2c2;
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p.subtitle {
+                font-size: 1rem;
+            }
+
+            .question {
+                font-size: 1rem;
+            }
+
+            .input-field {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .submit-button {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            footer {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Acceso Especial para Clarita 💖</h1>
+        <p class="subtitle">Responde correctamente a las preguntas para entrar.</p>
+    </header>
+
+    <div class="form-container">
+        <div class="question">
+            ¿Cuál es mi Nombre Completo? (Con Acentos🤭)
+        </div>
+        <input type="text" id="question1" class="input-field" placeholder="Escribe tu respuesta" required>
+
+        <div class="question">
+            ¿Cuál es nuestra fecha de aniversario?
+        </div>
+        <input type="text" id="question2" class="input-field" placeholder="Escribe tu respuesta" required>
+
+        <div class="question">
+            ¿Cuál es mi color favorito?
+        </div>
+        <input type="text" id="question3" class="input-field" placeholder="Escribe tu respuesta" required>
+
+        <div class="question">
+            ¿Cuál es nuestra fecha especial? (Tú saber)
+        </div>
+        <input type="text" id="question4" class="input-field" placeholder="Escribe tu respuesta" required>
+        <br>
+        <button class="submit-button" onclick="verificarRespuesta()">Entrar</button>
+    </div>
+
+    <footer>
+        <p>Siempre tuyo, te amo con todo mi corazón. 💕</p>
+    </footer>
+
+    <!-- Mensaje de error -->
+        <div id="error-message" class="error-message">
+            <button class="close-btn" onclick="cerrarMensaje()">×</button>
+            <p>Te equivocaste corazón 🥺, igual te sigo amando 😘😍. Intentá de nuevo.</p>
+        </div>
+    <script>
+        function verificarRespuesta() {
+            var respuesta1 = document.getElementById("question1").value.trim().toLowerCase();
+            var respuesta2 = document.getElementById("question2").value.trim().toLowerCase();
+            var respuesta3 = document.getElementById("question3").value.trim().toLowerCase();
+            var respuesta4 = document.getElementById("question4").value.trim().toLowerCase();
+
+            console.log("Respuesta 1: " + respuesta1);
+            console.log("Respuesta 2: " + respuesta2);
+            console.log("Respuesta 3: " + respuesta3);
+            console.log("Respuesta 4: " + respuesta4);
+
+            // Definir las respuestas correctas
+            var respuestaCorrecta1 = "omar adrián ortiz rodríguez"; // Usar minúsculas para que no cause errores
+            var respuestaCorrecta2 = "18 de junio"; 
+            var respuestaCorrecta3 = "azul";
+            var respuestaCorrecta4 = "29 de septiembre";
+
+            // Verificar las respuestas
+            if (respuesta1 === respuestaCorrecta1 && respuesta2 === respuestaCorrecta2 && respuesta3 === respuestaCorrecta3 && respuesta4 === respuestaCorrecta4) {
+                window.location.href = "clarita.html"; 
+            } else {
+                // Mostrar mensaje de error
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+
+        function cerrarMensaje() {
+            document.getElementById("error-message").style.display = "none";
+        }
+    </script>
+</body>
+</html>
