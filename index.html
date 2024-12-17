@@ -21,7 +21,8 @@
 
         header {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 30px;
+            padding: 0 15px;
         }
 
         h1 {
@@ -43,19 +44,24 @@
             font-size: 1.2rem;
             color: #e84a5f;
             font-family: 'Great Vibes', cursive;
+            padding: 0 10px;
         }
 
+        /* Botones */
         .buttons-container {
             display: flex;
-            gap: 20px;
-            margin-top: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 0 10px;
         }
 
         .surprise-button {
             background-color: #f7b7a3;
             border: none;
             padding: 15px;
-            font-size: 2rem;
+            font-size: 1.8rem;
             cursor: pointer;
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -75,6 +81,7 @@
             color: #7b5e6a;
             margin-top: 20px;
             animation: fadeIn 1s ease-in-out;
+            padding: 0 15px;
         }
 
         .sorpresa p {
@@ -82,12 +89,60 @@
             padding: 15px;
             border-radius: 8px;
             font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(-10px); }
             100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media Queries para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p.subtitle {
+                font-size: 1.2rem;
+            }
+
+            .surprise-button {
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .sorpresa p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p.subtitle {
+                font-size: 1rem;
+            }
+
+            .surprise-button {
+                font-size: 1.3rem;
+                padding: 8px;
+            }
+
+            .sorpresa p {
+                font-size: 1.3rem;
+            }
+
+            footer {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -110,28 +165,24 @@
                 <button class="surprise-button" onclick="mostrarSorpresa('sorpresa3')">🌹</button>
                 <button class="surprise-button" onclick="mostrarSorpresa('sorpresa4')">🎶</button>
                 <button class="surprise-button" onclick="mostrarSorpresa('sorpresa5')">🌟</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa6')">❤️</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa7')">💎</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa8')">🌻</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa9')">🕊️</button>
+                <button class="surprise-button" onclick="mostrarSorpresa('sorpresa10')">💫</button>
             </div>
 
             <!-- Mensajes sorpresa -->
-            <div id="sorpresa1" class="sorpresa">
-                <p>Te amo más que ayer, pero menos que mañana. 💖</p>
-            </div>
-
-            <div id="sorpresa2" class="sorpresa">
-                <p>Si fueras un sueño, nunca quisiera despertar. 😘</p>
-            </div>
-
-            <div id="sorpresa3" class="sorpresa">
-                <p>Cada día contigo es un regalo, mi vida sería incompleta sin ti. 🌙</p>
-            </div>
-
-            <div id="sorpresa4" class="sorpresa">
-                <p>Tu risa es mi canción favorita y tu amor mi inspiración eterna. 🎵</p>
-            </div>
-
-            <div id="sorpresa5" class="sorpresa">
-                <p>Eres mi estrella, la luz que guía mis noches más oscuras. 🌟</p>
-            </div>
+            <div id="sorpresa1" class="sorpresa"><p>Te amo más que ayer, pero menos que mañana. 💖</p></div>
+            <div id="sorpresa2" class="sorpresa"><p>Si fueras un sueño, nunca quisiera despertar. 😘</p></div>
+            <div id="sorpresa3" class="sorpresa"><p>Cada día contigo es un regalo, mi vida sería incompleta sin ti. 🌙</p></div>
+            <div id="sorpresa4" class="sorpresa"><p>Tu risa es mi canción favorita y tu amor mi inspiración eterna. 🎵</p></div>
+            <div id="sorpresa5" class="sorpresa"><p>Eres mi estrella, la luz que guía mis noches más oscuras. 🌟</p></div>
+            <div id="sorpresa6" class="sorpresa"><p>Mi lugar favorito en el mundo es a tu lado. ❤️</p></div>
+            <div id="sorpresa7" class="sorpresa"><p>Amarte es el tesoro más grande que la vida me ha dado. 💎</p></div>
+            <div id="sorpresa8" class="sorpresa"><p>Como el girasol busca al sol, mi corazón siempre te busca a ti. 🌻</p></div>
+            <div id="sorpresa9" class="sorpresa"><p>Tu amor llena de paz mi alma, como una brisa suave. 🕊️</p></div>
+            <div id="sorpresa10" class="sorpresa"><p>En el cielo de mi corazón, cada estrella lleva tu nombre. 💫</p></div>
         </section>
     </main>
 
